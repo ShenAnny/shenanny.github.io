@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src = "https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="main.js"></script>
+  <title>Can You Beat the Market? -- A Project for Stat 157 (2017)</title>
+  <h1>Can You Beat the Market? -- Project for Stat 157(2017)</h1>
+  <h3>Yixin Shen & Dodo Qian</h3>
+</head>
+<body onload="clearTable()" bgcolor="#F7F7FD"><div id="header-wrapper">
+  <b>Let's Play Around!</b>
+  <br><br/>
+  <b>There is one fund acts better than the others. Can you figure out which one is it?</b>
+
+  <p>Among these 25 funds, there is one fund that has a annual growing rate of 9% on average,<br/>
+    and the rest funds all have 5% as the annual growing rate on average.<br/>
+    If you can figure that fund out, you are more likely to beat the market.<br/>
+    The blanks are for you to manage the percentages of how would you like to buy the funds,<br/>
+    so the sum cannot exceed 100(%), and if it does, a warning will show up.<br/>
+    The previous 3 year performance is already given.<br/>
+    You can use all the precede growing rates of each funds to guess which one has 9% as the average<br/>
+    annually growing rate.<br/><br/>
+    Note: it is highly recommend to have a sum of your input numbers as 100 in order to be more<br/>
+    likely to beat the market, since the market tends to grow.<br/><br/>
+    The game will end at the 15th year. At that time, if your cumulative profit is larger than<br/>
+    the cumulative profit of the market, then you beat the market! Congratulations!!
+  </p>
+  <div id="resultsTable">
+    <table id='summaryOfResults' border='1' bgcolor="#FFFFFF">
+      <tbody id="tableBody">
+      </tbody>
+    </table>
+  </div>
+  <br><br/>
+  <div id="tableButtons">
+    <button id='write'  onclick='clearTable();'>Start Over</button>
+    <button id='write2'  onclick='getUserprofitforThisYear();'>I Want My Profit!</button>
+  </div>
+  <br><br/>
+  <b>Your Profit for that Year:</b>
+  <div id="profitTable">
+    <table id='profits' border='1'bgcolor="#FFFFFF">
+      <tbody id="profitBody">
+      </tbody>
+    </table>
+  </div>
+  <b>Market Profit:</b>
+  <div id="MarketProfitTable">
+    <table id='marketprofits' border='1'bgcolor="#FFFFFF">
+      <tbody id="MarketProfitBody">
+      </tbody>
+    </table>
+  </div>
+  <br><br/>
+  <b>Your Cumulative Profit:</b>
+  <div id="cumulateprofitTable">
+    <table id='cumuprofits' border='1'bgcolor="#FFFFFF"F>
+      <tbody id="cumuprofitBody">
+      </tbody>
+    </table>
+  </div>
+  <b>Market Cumulative Profit:</b>
+  <div id="cumulateMarketprofitTable">
+    <table id='cumuMarketprofits' border='1'bgcolor="#FFFFFF">
+      <tbody id="cumuMarketprofitBody">
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
