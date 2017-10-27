@@ -268,7 +268,7 @@ function writeprofitTable() {
     html += '<th>Year'+(j+1)+'</th>'   //this will be the head of first row
   }
     html += '</tr>'
-    html += '<th>User Profit   &nbsp &nbsp&nbsp    </th>'   //this will be the head of first row
+    html += '<th>User Profit   &nbsp &nbsp;&nbsp    </th>'   //this will be the head of first row
 
   for (var j = 0; j < data_row-3; j++) {
       // add <td> elements to the string:
@@ -347,7 +347,7 @@ function cumuUserTable() {
     html += '<th>Year'+(j+1)+'</th>'   //this will be the head of first row
   }
     html += '</tr>'
-    html += '<th>User Cumulative Profit &nbsp&nbsp&nbsp </th>'   //this will be the head of first row
+    html += '<th>User Cumulative Profit &nbsp;&nbsp;&nbsp </th>'   //this will be the head of first row
 
   for (var j = 0; j < data_row-3; j++) {
       // add <td> elements to the string:
