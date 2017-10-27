@@ -387,6 +387,6 @@ function beatTheMarket(){
       alert("You get the same profit as the market!")
     }
     good_fund += 1
-    alert(good_fund)
+    alert("The good fund is: " + good_fund)
   }
 }
