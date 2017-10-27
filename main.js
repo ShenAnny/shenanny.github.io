@@ -171,7 +171,7 @@ function generateData() {
     } else {
       temp += normal_random(4, Math.sqrt(200))
     }
-    data_array[i].push(temp)
+    data_array[data_row].push(temp)
   }
   data_row++  
   writeTable()
