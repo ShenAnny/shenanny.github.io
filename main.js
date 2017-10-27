@@ -81,7 +81,7 @@ function gen_3year_data(){
       if(j == good_fund){
         temp += normal_random(4, Math.sqrt(200))
       } else {
-        temp += normal_random(4, Math.sqrt(200))
+        temp += normal_random(0, Math.sqrt(200))
       }
       data_array[i].push(temp)
     }
@@ -169,7 +169,7 @@ function generateData() {
     if(j == good_fund){
       temp += normal_random(4, Math.sqrt(200))
     } else {
-      temp += normal_random(4, Math.sqrt(200))
+      temp += normal_random(0, Math.sqrt(200))
     }
     data_array[data_row].push(temp)
   }
