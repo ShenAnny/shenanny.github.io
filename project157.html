@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    if (location.protocol == 'http:') location.href = location.href.replace(/^http:/, 'https:')
+  </script>
+  <script src = "https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
+  <script src="main.js"></script>
+  <title>Can You Beat the Market Index?</title>
+  <h1 align=center>Can You Beat the Market Index?</h1>
+  <h3 align=center>Yixin Shen & Dodo Qian:   A Project for U.C. Berkeley Stat 157 (2017) <br/><i>With Prof. Aldous </i> </h3>
+</head>
+<body onload="clearTable()" bgcolor="#F7F7FD"><div id="header-wrapper">
+  <p> 
+    Logic says that, because most stock market investment is via professional management 
+    ("funds", for simplicity) charging a fee to investors, 
+    the average return to investors over all such funds must be essentially the overall market average, minus the average fee. 
+    It might be that a small proportion of fund managers can indeed "beat the average" in the long term by skill rather than luck.
+    Even supposing that is true, can an investor benefit by being able to identify such funds in a reasonable time?
+    <p>
+    This page illustrates the issue via a game based on a simple model (<a href="writeup.pdf">more details of model here</a>).
+    There are 25 hypothetical funds, with different random returns each year.  
+    For 24 of the funds, the mean return for each year will be the index return, minus 1% fee.
+    Only one fund will be "worthwhile", with mean return being the index return plus 2%.
+   One could invest in the index without fee,
+    but can you do better by trying to identify this "worthwhile" fund and investing in it?
+    <p>
+    In the game, you start by seeing the funds' gains for the previous 3 years.
+   Then allocate your portfolio between funds (as percentages like 25, 64, 11 --  leave blank for 0s).
+   Then press the "Simulate next year results" button. 
+   You will see
+   <UL>
+   <LI> In the first table, the gain of each fund in year 1 and the corresponding current fund value (from initial 100, three years before), 
+   together with the updated "recent 3 years" gain.
+   <LI> In the bottom tables, your gain for the year compared to the index gain, and your current
+   portfolio value compared to the index (both based on 100 when you start).
+   </UL>
+   
+     You then allocate your portfolio for the coming year, and again press the "Simulate next year results" button.
+   To help you choose, the second table shows the best performing funds, both since inception and over the previous 3 years.
+   And the bottom table updates so you can compare your portfolio value to the index.  
+   Are you performing better or worse?
+     <p>
+     Remember that in this model we have hidden one "worthwhile" fund that in the very long term will 
+   grow 2% faster than the index, whereas the others will grow 1% slower.   
+   Our game continues for only 12 years.    
+   Can you beat the index over 12 years, either by luck or by identifying the "worthwhile" fund? 
+   You can track progress in the bottom table.  
+   After 12 years, the "worthwhile" fund will be revealed.  Often it will not be
+   the best-performing fund over these 12 years -- a few other funds will "by luck" have done better.
+     </p>   
+  <div id="resultsTable">
+    <table id='summaryOfResults' border='1' bgcolor="#FFFFFF">
+      <tbody id="tableBody">
+      </tbody>
+    </table>
+  </div>
+  <br><br/>
+  <div id="tableButtons">
+    <button id='write'  onclick='clearTable();'>Start Over</button>
+    <button id='write2'  onclick='getUserprofitforThisYear();'>Simulate next year results</button>
+  </div>
+  <div id="goodFund" style="color:#FF0000"></div>
+  <br><br/>
+  <b>Best fund growth rates: </b>
+  <div>
+    <table border='1' bgcolor="#FFFFFF">
+      <tbody id="method1">
+      </tbody>
+    </table>
+  </div>
+
+  <br><br/>
+  <b>Your gain for each year:</b>
+  <div id="profitTable">
+    <table id='profits' border='1'bgcolor="#FFFFFF">
+      <tbody id="profitBody">
+      </tbody>
+    </table>
+  </div>
+  <br><br/>
+  <b>Your portfolio value compared to the index:</b>
+  <div id="cumulateprofitTable">
+    <table id='cumuprofits' border='1'bgcolor="#FFFFFF">
+      <tbody id="cumuprofitBody">
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
